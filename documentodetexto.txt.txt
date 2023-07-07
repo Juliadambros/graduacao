@@ -1,0 +1,12 @@
+Avaliação
+
+
+As formas de avaliação são dadas por meio da média (M) de 3 provas (P1, P2 e P3), dada por  
+
+             M=(P1+P2+P3)/3
+
+e exercícios (E), gerando uma média que resulta na nota semestral (NS), dada por
+
+  NS=M*0,6+E*0,4.
+
+Ao final da disciplina, haverá uma prova de recuperação (PR) de rendimento substituindo a média (M) das 3 provas, se a prova de recuperação (PR) for maior que a média (M) das 3 provas.
