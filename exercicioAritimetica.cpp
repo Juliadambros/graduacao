@@ -13,14 +13,14 @@ int* juncao(const int* vetor1, int tamanho1, const int* vetor2, int tamanho2);
 void separar(const int* vetor, int tamanho, int* pares, int& tamanhoPares, int* impares, int& tamanhoImpares);
 
 int main() {
-    // Demonstração da Função 1 - Mínimo e Máximo
+    // Função 1 
     int vetor1[] = {3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5};
     int minimo, maximo;
     minMax(vetor1, sizeof(vetor1) / sizeof(vetor1[0]), &minimo, &maximo);
     cout << "Minimo: " << minimo << endl;
     cout << "Maximo: " << maximo << endl;
 
-    // Demonstração da Função 2 - Junção de Vetores
+    // Função 2 
     int vetor2[] = {1, 2, 3};
     int tamanho1 = sizeof(vetor1) / sizeof(vetor1[0]);
     int tamanho2 = sizeof(vetor2) / sizeof(vetor2[0]);
@@ -32,7 +32,7 @@ int main() {
     cout << endl;
     delete[] resultado;
 
-    // Demonstração da Função 3 - Separação de Vetor em Pares e Ímpares
+    // Função 3 
      int vetor3[] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
     int tamanho3 = sizeof(vetor3) / sizeof(vetor3[0]);
     int pares[tamanho3];
@@ -60,10 +60,8 @@ void minMax(int* vetor, int tamanho, int* enderecoMin, int* enderecoMax) {
         cout << "O vetor esta vazio." << endl;
         return;
     }
-
     *enderecoMin = *vetor;
     *enderecoMax = *vetor;
-
     for (int i = 1; i < tamanho; ++i) {
         if (*(vetor + i) < *enderecoMin) {
             *enderecoMin = *(vetor + i);
@@ -77,12 +75,10 @@ void minMax(int* vetor, int tamanho, int* enderecoMin, int* enderecoMax) {
 int* juncao(const int* vetor1, int tamanho1, const int* vetor2, int tamanho2) {
     int* resultado = new int[tamanho1 + tamanho2];
 
-    // Copia elementos do primeiro vetor para o resultado
     for (int i = 0; i < tamanho1; ++i) {
         *(resultado + i) = *(vetor1 + i);
     }
 
-    // Copia elementos do segundo vetor para o resultado
     for (int i = 0; i < tamanho2; ++i) {
         *(resultado + tamanho1 + i) = *(vetor2 + i);
     }
@@ -92,11 +88,8 @@ int* juncao(const int* vetor1, int tamanho1, const int* vetor2, int tamanho2) {
 
 // Função 3 - Separação de Vetor em Pares e Ímpares
 void separar(const int* vetor, int tamanho, int* pares, int& tamanhoPares, int* impares, int& tamanhoImpares) {
-    // Inicializa contadores de pares e ímpares
     tamanhoPares = 0;
     tamanhoImpares = 0;
-
-    // Preenche os vetores de pares e ímpares diretamente
     for (int i = 0; i < tamanho; ++i) {
         if (*(vetor + i) % 2 == 0) {
             *(pares + tamanhoPares) = *(vetor + i);
